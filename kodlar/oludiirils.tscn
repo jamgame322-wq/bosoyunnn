@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://3c1wv4ftmtmj"]
+
+[ext_resource type="Script" uid="uid://doi1dca2bfuxc" path="res://node_2d.gd" id="1_njy1g"]
+[ext_resource type="Texture2D" uid="uid://b02rrwx8pt4qu" path="res://textureler/MiniLumberjack.png" id="2_qvhjb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njy1g"]
+size = Vector2(18, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwuqh"]
+atlas = ExtResource("2_qvhjb")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wwwc"]
+atlas = ExtResource("2_qvhjb")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xohs"]
+atlas = ExtResource("2_qvhjb")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md47p"]
+atlas = ExtResource("2_qvhjb")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jacct"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwuqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wwwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xohs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md47p")
+}],
+"loop": true,
+"name": &"revive",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_njy1g")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, 12.5)
+shape = SubResource("RectangleShape2D_njy1g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jacct")
+animation = &"revive"

@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmb0ig1eiwyhj"]
+
+[ext_resource type="Texture2D" uid="uid://b02rrwx8pt4qu" path="res://textureler/MiniLumberjack.png" id="1_vhr8f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3ki7"]
+size = Vector2(18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cr02l"]
+atlas = ExtResource("1_vhr8f")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1is03"]
+atlas = ExtResource("1_vhr8f")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anod8"]
+atlas = ExtResource("1_vhr8f")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwi6w"]
+atlas = ExtResource("1_vhr8f")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yp7nk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cr02l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1is03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anod8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwi6w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 5)
+scale = Vector2(4.74596, 5.219373)
+shape = SubResource("RectangleShape2D_w3ki7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yp7nk")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -10.0
+offset_top = -11.000001
+offset_right = 67.0
+offset_bottom = 11.999999
+scale = Vector2(0.23997001, 0.27264363)
+text = "E'ye basın"
+horizontal_alignment = 1
+vertical_alignment = 1
